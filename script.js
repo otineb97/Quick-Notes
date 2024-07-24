@@ -96,11 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="card-text text-light" style="font-size: 0.875rem;">${note.content}</p>
                 </div>
                 <div class="card-footer border-top-0 d-lg-flex justify-content-lg-between align-items-center">
-                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1" title="Add reminder"><i class="bi bi-bell"></i></button>
-                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1" title="Collaborator"><i class="bi bi-person-plus"></i></button>
-                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1" title="Background options"><i class="bi bi-palette"></i></button>
-                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1" title="Add image"><i class="bi bi-image"></i></button>
-                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1" title="Archive"><i class="bi bi-archive"></i></button>
+                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 disabled" title="Add reminder"><i class="bi bi-bell"></i></button>
+                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 disabled" title="Collaborator"><i class="bi bi-person-plus"></i></button>
+                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 disabled" title="Background options"><i class="bi bi-palette"></i></button>
+                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 disabled" title="Add image"><i class="bi bi-image"></i></button>
+                    <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 disabled" title="Archive"><i class="bi bi-archive"></i></button>
                     <button class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 delete-note" title="Delete"><i class="bi bi-trash3"></i></button>
                 </div>
             </article>
