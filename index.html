@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quick Notes is an application for taking notes easily">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quick Notes</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid d-flex align-items-center justify-content-between text-light custom-border">
+            <div class="d-flex align-items-center">
+                <a href="#" class="navbar-brand d-flex align-items-center my-3">
+                    <img src="bootstrap-logo.svg" alt="Logo" class="me-2" style="width: 50.19px; height: 40px;">
+                    <span class="h4 card-text-light mb-0 d-none d-md-block">Quick</span>
+                </a>
+            </div>
+            <form class="d-none d-md-flex flex-grow-1 mx-5" role="search">
+                <div class="input-group">
+                    <button class="btn btn-light rounded-start-4 border-0" type="submit" title="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <input class="form-control bg-light rounded-end-4 border-0 placeholder-light shadow-none" type="search" placeholder="Search..." aria-label="Search" autocomplete="off">
+                </div>
+            </form>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-light border-0 rounded-5 opacity-75 me-2" title="Update">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </button>
+                <button class="btn btn-outline-light border-0 rounded-5 opacity-75 me-2" title="Dark mode">
+                    <i class="bi bi-moon"></i>
+                </button>
+                <button class="btn btn-outline-light border-0 rounded-5 opacity-75 me-2" title="Settings">
+                    <i class="bi bi-gear"></i>
+                </button>
+                <button class="btn btn-outline-light border-0 rounded-5 opacity-75" title="Grid">
+                    <i class="bi bi-grid"></i>
+                </button>
+            </div>
+            <div class="dropdown ms-md-5">
+                <button class="btn btn-outline-light border-0 rounded-5 opacity-75" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Profile">
+                    <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end custom-bg border-0 shadow" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item text-light opacity-75" href="#">Profile</a></li>
+                    <li><a class="dropdown-item text-light opacity-75" href="#">Settings</a></li>
+                    <li><a class="dropdown-item text-light opacity-75" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="row justify-content-center custom-my">
+            <div class="col col-md-10 col-lg-7">
+                <form id="noteForm" class="card rounded-3 bg-transparent border-light border-opacity-50">
+                    <div class="card-body">
+                        <label for="noteTitle" class="visually-hidden">Title</label>
+                        <input type="text" class="form-control bg-transparent border-0 placeholder-light fw-semibold text-light shadow-none" placeholder="Title" id="noteTitle" maxlength="70" autocomplete="off">
+                        <label for="noteContent" class="visually-hidden">Content</label>
+                        <textarea class="form-control bg-transparent border-0 placeholder-light fw-normal text-light shadow-none" style="resize: none;" rows="1" placeholder="Add a note..." id="noteContent" autocomplete="off"></textarea>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Add reminder"><i class="bi bi-bell"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Collaborator"><i class="bi bi-person-plus"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Background options"><i class="bi bi-palette"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Add image"><i class="bi bi-image"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Archive"><i class="bi bi-archive"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Undo" id="undoButton"><i class="bi bi-arrow-return-left"></i></button>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 rounded-5 opacity-75 me-1 me-md-2" title="Redo" id="redoButton"><i class="bi bi-arrow-return-right"></i></button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-light border-0 opacity-75" id="cancelButton" title="Cancel">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 mb-3" id="notesContainer">
+            <!-- Notes will be dynamically added here -->
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

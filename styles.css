@@ -1,0 +1,33 @@
+body {
+    background-color: #202125;
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-bg {
+    background-color: #202125;
+}
+
+.placeholder-light {
+    max-width: 600px;
+}
+
+.placeholder-light::placeholder {
+    color: #6c757d;
+}
+
+.dropdown-item:hover {
+    background-color: #343a40;
+}
+
+.custom-border {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.custom-my {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-text-light {
+    color: rgba(255, 255, 255, 0.90);
+}
