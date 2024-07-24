@@ -26,3 +26,7 @@ Make sure you have the following installed on your local machine:
 1. **Clone the repository**:
    ```sh
    git clone https://github.com/yourusername/quick-notes.git
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [MIT License](LICENSE) para obtener más detalles.
