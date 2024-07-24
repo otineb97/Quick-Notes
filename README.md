@@ -2,6 +2,8 @@
 
 Quick Notes is a responsive and user-friendly note-taking application. It provides a clean and intuitive interface for creating, organizing, and managing your notes. Key features include local storage for offline access and real-time search.
 
+[Click here and try it out for yourself](https://otineb97.github.io/Quick-Notes/)
+
 ## Key Features
 
 - **Responsive Design**: Adapts perfectly to various screen sizes and devices.
